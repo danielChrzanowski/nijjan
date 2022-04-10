@@ -11,15 +11,15 @@ code {
 }
 
 :root {
-  --background: white;
-  --text-primary: black;
+  --background: #363537;
+  --text-primary: #fafafa;
   --text-secondary: grey;
   --accent: darkred;
 }
 
-[data-theme="dark"] {
-  --background: #363537;
-  --text-primary: #fafafa;
+[data-theme="light"] {
+  --background: white;
+  --text-primary: black;
   --text-secondary: grey;
   --accent: darkred;
 }
