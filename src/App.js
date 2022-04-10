@@ -1,14 +1,26 @@
 import { faPalette } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { ButtonGroup, Container, Nav, Navbar, NavDropdown, ToggleButton } from 'react-bootstrap';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import useLocalStorage from 'use-local-storage';
 import './App.scss';
 import Contact from './components/Contact/Contact';
 import GW2 from './components/Games/GW2/GW2';
 import Home from './components/Home/Home';
+import { useTranslation, Trans } from 'react-i18next';
+import { useState } from 'react';
+
+const radios = [
+  { name: 'EN', value: 'en' },
+  { name: 'PL', value: 'pl' }
+];
 
 function App() {
+  const { t, i18n } = useTranslation();
+  let activeLng = localStorage.getItem("i18nextLng");
+  console.log(activeLng);
+  const [radioValue, setRadioValue] = useState(activeLng);
+
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
 
@@ -34,16 +46,34 @@ function App() {
                 </NavDropdown>
               </Nav>
               <Nav>
+                <NavDropdown.Divider />
                 <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
-                <Nav.Link onClick={switchTheme}><FontAwesomeIcon icon={faPalette} /></Nav.Link>
+                <Nav.Link onClick={switchTheme} ><FontAwesomeIcon icon={faPalette} /></Nav.Link>
+                <ButtonGroup className="mb-2">
+                  {radios.map((radio, idx) => (
+                    <ToggleButton
+                      key={idx}
+                      id={`radio-${idx}`}
+                      type="radio"
+                      variant="secondary"
+                      name="radio"
+                      value={radio.value}
+                      checked={radioValue === radio.value}
+                      onChange={(e) => setRadioValue(e.currentTarget.value)}
+                      onClick={() => i18n.changeLanguage(radio.value)}
+                    >
+                      {radio.name}
+                    </ToggleButton>
+                  ))}
+                </ButtonGroup>
               </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
-        
+
         <div className="content">
           <Routes>
-            <Route exact path='/' element={<Home />} />
+            <Route exact path='/' element={<Home translation={t} />} />
             <Route path='/games/gw2' element={<GW2 />} />
             <Route path='/contact' element={<Contact />} />
           </Routes>
