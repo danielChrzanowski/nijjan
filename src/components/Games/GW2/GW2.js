@@ -1,13 +1,13 @@
 import './GW2.scss';
 
-const Home = () => (
-  <div className='GW2'>
+const GW2 = () => (
+  <div className='content'>
     GW2 Component
   </div>
 );
 
-Home.propTypes = {};
+GW2.propTypes = {};
 
-Home.defaultProps = {};
+GW2.defaultProps = {};
 
-export default Home;
+export default GW2;

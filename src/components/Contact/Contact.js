@@ -1,7 +1,7 @@
 import './Contact.scss';
 
 const Contact = () => (
-  <div className='Contact'>
+  <div className='content'>
     Contact Component
   </div>
 );

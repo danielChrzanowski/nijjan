@@ -1,14 +1,16 @@
 import { faPalette } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from 'react';
 import { ButtonGroup, Container, Nav, Navbar, NavDropdown, ToggleButton } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import useLocalStorage from 'use-local-storage';
 import './App.scss';
 import Contact from './components/Contact/Contact';
+import DogeAPI from './components/DogeAPI/DogeAPI';
 import GW2 from './components/Games/GW2/GW2';
+import AllGames from './components/Games/ĄllGames/AllGames';
 import Home from './components/Home/Home';
-import { useTranslation, Trans } from 'react-i18next';
-import { useState } from 'react';
 
 const radios = [
   { name: 'EN', value: 'en' },
@@ -17,12 +19,13 @@ const radios = [
 
 function App() {
   const { t, i18n } = useTranslation();
-  let activeLng = localStorage.getItem("i18nextLng");
-  console.log(activeLng);
+  const activeLng = localStorage.getItem("i18nextLng");
   const [radioValue, setRadioValue] = useState(activeLng);
 
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
+
+  const langButtonTheme = theme === 'light' ? 'primary' : 'secondary';
 
   const switchTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -32,30 +35,30 @@ function App() {
   return (
     <div className="App" data-theme={theme}>
       <BrowserRouter>
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg={theme} variant={theme}>
           <Container>
             <Navbar.Brand as={Link} to="/">Nijjan</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link as={Link} to="/contact">Features</Nav.Link>
                 <NavDropdown title="Games" id="collasible-nav-dropdown">
-                  <NavDropdown.Item as={Link} to="/contact">All games</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/games/allGames">All games</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item as={Link} to="/games/gw2">Guild Wars 2</NavDropdown.Item>
                 </NavDropdown>
+                <Nav.Link as={Link} to="/dogeAPI">Doge API</Nav.Link>
               </Nav>
               <Nav>
                 <NavDropdown.Divider />
                 <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
                 <Nav.Link onClick={switchTheme} ><FontAwesomeIcon icon={faPalette} /></Nav.Link>
-                <ButtonGroup className="mb-2">
+                <ButtonGroup className="mb-2 langButtons">
                   {radios.map((radio, idx) => (
                     <ToggleButton
                       key={idx}
                       id={`radio-${idx}`}
                       type="radio"
-                      variant="secondary"
+                      variant={langButtonTheme}
                       name="radio"
                       value={radio.value}
                       checked={radioValue === radio.value}
@@ -71,13 +74,13 @@ function App() {
           </Container>
         </Navbar>
 
-        <div className="content">
-          <Routes>
-            <Route exact path='/' element={<Home translation={t} />} />
-            <Route path='/games/gw2' element={<GW2 />} />
-            <Route path='/contact' element={<Contact />} />
-          </Routes>
-        </div >
+        <Routes>
+          <Route exact path='/' element={<Home translation={t} />} />
+          <Route path='/games/allGames' element={<AllGames />} />
+          <Route path='/games/gw2' element={<GW2 />} />
+          <Route path='/dogeAPI' element={<DogeAPI />} />
+          <Route path='/contact' element={<Contact />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );
