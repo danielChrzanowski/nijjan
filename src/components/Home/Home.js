@@ -10,7 +10,7 @@ const Home = (props) => {
   return (
     <div>
       <div className='carousel'>
-        <Carousel fade>
+        <Carousel indicators={false} fade>
           <Carousel.Item>
             <img className="d-block w-100 carouselImg" src={image1} alt="" />
           </Carousel.Item>
