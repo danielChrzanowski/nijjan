@@ -1,10 +1,14 @@
 import './DogeAPI.scss';
 
-const DogeAPI = () => (
-  <div className='content'>
-    DogeAPI Component
-  </div>
-);
+const DogeAPI = (props) => {
+  const t = props.translation;
+
+  return (
+    <div className='content'>
+      DogeAPI Component
+    </div>
+  );
+}
 
 DogeAPI.propTypes = {};
 

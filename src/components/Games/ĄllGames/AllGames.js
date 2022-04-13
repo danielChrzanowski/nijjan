@@ -1,10 +1,14 @@
 import './AllGames.scss';
 
-const AllGames = () => (
-  <div className='content'>
-    AllGames Component
-  </div>
-);
+const AllGames = (props) => {
+  const t = props.translation;
+
+  return (
+    <div className='content'>
+      AllGames Component
+    </div>
+  );
+}
 
 AllGames.propTypes = {};
 

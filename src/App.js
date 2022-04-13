@@ -41,8 +41,8 @@ function App() {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-                <NavDropdown title="Games" id="collasible-nav-dropdown" menuVariant={theme}>
-                  <NavDropdown.Item as={Link} to="/games/allGames">All games</NavDropdown.Item>
+                <NavDropdown title={t('navbar.games')} id="collasible-nav-dropdown" menuVariant={theme}>
+                  <NavDropdown.Item as={Link} to="/games/allGames">{t('navbar.allGames')}</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item as={Link} to="/games/gw2">Guild Wars 2</NavDropdown.Item>
                 </NavDropdown>
@@ -50,7 +50,7 @@ function App() {
               </Nav>
               <Nav>
                 <NavDropdown.Divider />
-                <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+                <Nav.Link as={Link} to="/contact">{t('navbar.contact')}</Nav.Link>
                 <Nav.Link onClick={switchTheme} ><FontAwesomeIcon icon={faPalette} /></Nav.Link>
                 <ButtonGroup className="mb-2 langButtons">
                   {radios.map((radio, idx) => (
@@ -76,15 +76,15 @@ function App() {
 
         <Routes>
           <Route exact path='/' element={<Home translation={t} />} />
-          <Route path='/games/allGames' element={<AllGames />} />
-          <Route path='/games/gw2' element={<GW2 />} />
-          <Route path='/dogeAPI' element={<DogeAPI />} />
-          <Route path='/contact' element={<Contact />} />
+          <Route path='/games/allGames' element={<AllGames translation={t} />} />
+          <Route path='/games/gw2' element={<GW2 translation={t} />} />
+          <Route path='/dogeAPI' element={<DogeAPI translation={t} />} />
+          <Route path='/contact' element={<Contact translation={t} />} />
         </Routes>
       </BrowserRouter>
 
       <div className={theme === 'light' ? 'bg-light footer' : 'bg-dark footer'}>
-        Daniel Chrzanowski v0.1.0
+        Daniel Chrzanowski v{process.env.REACT_APP_VERSION}
       </div>
     </div >
   );

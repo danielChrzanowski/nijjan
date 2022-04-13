@@ -1,10 +1,14 @@
 import './Contact.scss';
 
-const Contact = () => (
-  <div className='content'>
-    Contact Component
-  </div>
-);
+const Contact = (props) => {
+  const t = props.translation;
+
+  return (
+    <div className='content'>
+      Contact Component
+    </div>
+  );
+}
 
 Contact.propTypes = {};
 
