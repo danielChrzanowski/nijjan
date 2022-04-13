@@ -84,7 +84,7 @@ function App() {
       </BrowserRouter>
 
       <div className={theme === 'light' ? 'bg-light footer' : 'bg-dark footer'}>
-        Daniel Chrzanowski v{ENV['REACT_APP_VERSION']}
+        Daniel Chrzanowski v0.1.1
       </div>
     </div >
   );
