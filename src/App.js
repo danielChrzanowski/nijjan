@@ -34,57 +34,59 @@ function App() {
 
   return (
     <div className="App" data-theme={theme}>
-      <BrowserRouter>
-        <Navbar style={{ position: 'sticky' }} fixed="top" collapseOnSelect expand="lg" bg={theme} variant={theme}>
-          <Container>
-            <Navbar.Brand as={Link} to="/">Nijjan</Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="me-auto">
-                <NavDropdown title={t('navbar.games')} id="collasible-nav-dropdown" menuVariant={theme}>
-                  <NavDropdown.Item as={Link} to="/games/allGames">{t('navbar.allGames')}</NavDropdown.Item>
+      <div className='appContent'>
+        <BrowserRouter>
+          <Navbar style={{ position: 'sticky' }} fixed="top" collapseOnSelect expand="lg" bg={theme} variant={theme}>
+            <Container>
+              <Navbar.Brand as={Link} to="/">Nijjan</Navbar.Brand>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="me-auto">
+                  <NavDropdown title={t('navbar.games')} id="collasible-nav-dropdown" menuVariant={theme}>
+                    <NavDropdown.Item as={Link} to="/games/allGames">{t('navbar.allGames')}</NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item as={Link} to="/games/gw2">Guild Wars 2</NavDropdown.Item>
+                  </NavDropdown>
+                  <Nav.Link as={Link} to="/dogeAPI">Doge API</Nav.Link>
+                </Nav>
+                <Nav>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item as={Link} to="/games/gw2">Guild Wars 2</NavDropdown.Item>
-                </NavDropdown>
-                <Nav.Link as={Link} to="/dogeAPI">Doge API</Nav.Link>
-              </Nav>
-              <Nav>
-                <NavDropdown.Divider />
-                <Nav.Link as={Link} to="/contact">{t('navbar.contact')}</Nav.Link>
-                <Nav.Link onClick={switchTheme} ><FontAwesomeIcon icon={faPalette} /></Nav.Link>
-                <ButtonGroup className="mb-2 langButtons">
-                  {radios.map((radio, idx) => (
-                    <ToggleButton
-                      key={idx}
-                      id={`radio-${idx}`}
-                      type="radio"
-                      variant={langButtonTheme}
-                      name="radio"
-                      value={radio.value}
-                      checked={radioValue === radio.value}
-                      onChange={(e) => setRadioValue(e.currentTarget.value)}
-                      onClick={() => i18n.changeLanguage(radio.value)}
-                    >
-                      {radio.name}
-                    </ToggleButton>
-                  ))}
-                </ButtonGroup>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
+                  <Nav.Link as={Link} to="/contact">{t('navbar.contact')}</Nav.Link>
+                  <Nav.Link onClick={switchTheme} ><FontAwesomeIcon icon={faPalette} /></Nav.Link>
+                  <ButtonGroup className="mb-2 langButtons">
+                    {radios.map((radio, idx) => (
+                      <ToggleButton
+                        key={idx}
+                        id={`radio-${idx}`}
+                        type="radio"
+                        variant={langButtonTheme}
+                        name="radio"
+                        value={radio.value}
+                        checked={radioValue === radio.value}
+                        onChange={(e) => setRadioValue(e.currentTarget.value)}
+                        onClick={() => i18n.changeLanguage(radio.value)}
+                      >
+                        {radio.name}
+                      </ToggleButton>
+                    ))}
+                  </ButtonGroup>
+                </Nav>
+              </Navbar.Collapse>
+            </Container>
+          </Navbar>
 
-        <Routes>
-          <Route exact path='/' element={<Home translation={t} />} />
-          <Route path='/games/allGames' element={<AllGames translation={t} />} />
-          <Route path='/games/gw2' element={<GW2 translation={t} />} />
-          <Route path='/dogeAPI' element={<DogeAPI translation={t} />} />
-          <Route path='/contact' element={<Contact translation={t} />} />
-        </Routes>
-      </BrowserRouter>
+          <Routes>
+            <Route exact path='/' element={<Home translation={t} />} />
+            <Route path='/games/allGames' element={<AllGames translation={t} />} />
+            <Route path='/games/gw2' element={<GW2 translation={t} />} />
+            <Route path='/dogeAPI' element={<DogeAPI translation={t} />} />
+            <Route path='/contact' element={<Contact translation={t} />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
 
       <div className={theme === 'light' ? 'bg-light footer' : 'bg-dark footer'}>
-        Daniel Chrzanowski v0.1.1
+        Daniel Chrzanowski v0.1.2
       </div>
     </div >
   );
