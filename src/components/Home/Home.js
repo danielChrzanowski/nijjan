@@ -24,7 +24,7 @@ const Home = (props) => {
       </div>
 
       <div className='content'>
-        <h4> {t('homeComponent')}</h4>
+        <h4> {t('homeComponent.title1')}</h4>
         Tłumaczenie tylko tu na razie działa
         <br /><br />
         "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled

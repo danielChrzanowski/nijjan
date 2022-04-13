@@ -5,9 +5,17 @@
   min-height: calc(100vh);
   max-height: fit-content;
   transition: all 0.5s;
+  position: relative;
 }
 
 .langButtons {
   width: min-content;
   margin: auto;
+}
+
+.footer {
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }

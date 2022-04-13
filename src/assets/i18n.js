@@ -14,14 +14,16 @@ i18n
     resources: {
       en: {
         translation: {
-          homeComponent: 'Home Component',
-
+          homeComponent: {
+            title1: 'Strona startowa',
+          }
         }
       },
       pl: {
         translation: {
-          homeComponent: 'Komponent Home',
-          
+          homeComponent: {
+            title1: 'Nijjan',
+          }
         }
       }
     }

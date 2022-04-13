@@ -35,13 +35,13 @@ function App() {
   return (
     <div className="App" data-theme={theme}>
       <BrowserRouter>
-        <Navbar collapseOnSelect expand="lg" bg={theme} variant={theme}>
+        <Navbar style={{ position: 'sticky' }} fixed="top" collapseOnSelect expand="lg" bg={theme} variant={theme}>
           <Container>
             <Navbar.Brand as={Link} to="/">Nijjan</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-                <NavDropdown title="Games" id="collasible-nav-dropdown">
+                <NavDropdown title="Games" id="collasible-nav-dropdown" menuVariant={theme}>
                   <NavDropdown.Item as={Link} to="/games/allGames">All games</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item as={Link} to="/games/gw2">Guild Wars 2</NavDropdown.Item>
@@ -82,7 +82,11 @@ function App() {
           <Route path='/contact' element={<Contact />} />
         </Routes>
       </BrowserRouter>
-    </div>
+
+      <div className={theme === 'light' ? 'bg-light footer' : 'bg-dark footer'}>
+        Daniel Chrzanowski v0.1.0
+      </div>
+    </div >
   );
 }
 
