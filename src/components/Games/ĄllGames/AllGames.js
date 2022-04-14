@@ -1,7 +1,7 @@
 import './AllGames.scss';
 
 const AllGames = (props) => {
-  const t = props.translation;
+ // const t = props.translation;
 
   return (
     <div className='content'>

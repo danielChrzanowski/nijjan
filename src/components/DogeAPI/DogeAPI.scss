@@ -1,0 +1,18 @@
+.refreshBtn {
+    margin-left: auto;
+}
+
+.dogeImg {
+    max-width: 100%;
+    max-height: 78vh;
+    margin: auto;
+    padding-top: 10px;
+    border-radius: 20px 20px 10px 10px;
+}
+
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

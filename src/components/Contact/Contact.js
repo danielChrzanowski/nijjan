@@ -1,7 +1,7 @@
 import './Contact.scss';
 
 const Contact = (props) => {
-  const t = props.translation;
+ // const t = props.translation;
 
   return (
     <div className='content'>

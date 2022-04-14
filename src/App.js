@@ -79,7 +79,7 @@ function App() {
             <Route exact path='/' element={<Home translation={t} />} />
             <Route path='/games/allGames' element={<AllGames translation={t} />} />
             <Route path='/games/gw2' element={<GW2 translation={t} />} />
-            <Route path='/dogeAPI' element={<DogeAPI translation={t} />} />
+            <Route path='/dogeAPI' element={<DogeAPI />} />
             <Route path='/contact' element={<Contact translation={t} />} />
           </Routes>
         </BrowserRouter>
