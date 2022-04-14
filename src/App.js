@@ -19,7 +19,8 @@ const radios = [
 
 function App() {
   const { t, i18n } = useTranslation();
-  const activeLng = localStorage.getItem("i18nextLng");
+  let activeLng = localStorage.getItem("i18nextLng");
+  activeLng = activeLng === null ? 'en' : activeLng;
   const [radioValue, setRadioValue] = useState(activeLng);
 
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -86,7 +87,7 @@ function App() {
       </div>
 
       <div className={theme === 'light' ? 'bg-light footer' : 'bg-dark footer'}>
-        Daniel Chrzanowski v0.1.2
+        Daniel Chrzanowski v0.1.3
       </div>
     </div >
   );
