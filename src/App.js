@@ -19,8 +19,7 @@ const radios = [
 
 function App() {
   const { t, i18n } = useTranslation();
-  let activeLng = localStorage.getItem("i18nextLng");
-  activeLng = activeLng === null ? 'en' : activeLng;
+  const activeLng = localStorage.getItem("i18nextLng");
   const [radioValue, setRadioValue] = useState(activeLng);
 
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -37,7 +36,7 @@ function App() {
     <div className="App" data-theme={theme}>
       <div className='appContent'>
         <BrowserRouter>
-          <Navbar style={{ position: 'sticky' }} fixed="top" collapseOnSelect expand="lg" bg={theme} variant={theme}>
+          <Navbar style={{ position: 'sticky', transition: "all 0.7s" }} fixed="top" collapseOnSelect expand="lg" bg={theme} variant={theme}>
             <Container>
               <Navbar.Brand as={Link} to="/">Nijjan</Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -63,7 +62,7 @@ function App() {
                         variant={langButtonTheme}
                         name="radio"
                         value={radio.value}
-                        checked={radioValue === radio.value}
+                        checked={radioValue === "" ? { activeLng } : radio.value}
                         onChange={(e) => setRadioValue(e.currentTarget.value)}
                         onClick={() => i18n.changeLanguage(radio.value)}
                       >
