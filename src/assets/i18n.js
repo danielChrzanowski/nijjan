@@ -17,13 +17,13 @@ i18n
           navbar: {
             games: "Games",
             allGames: "All games",
-            contact: "Contact"
+            sign_in: "Sign in"
           },
           home: {
             title1: "About",
             games: "Games - games informations",
             dogeAPI: "Doge API - Dog photos API",
-            contact: "Contact - Contact with the creator",
+            sign_in: "Sign in - sign in to the app",
             styleChange: " - style change",
             languageChange: "EN/PL - language change"
           },
@@ -37,13 +37,13 @@ i18n
           navbar: {
             games: "Gry",
             allGames: "Wszystkie gry",
-            contact: "Kontakt"
+            sign_in: "Zaloguj się"
           },
           home: {
             title1: 'O aplikacji',
             games: "Gry - informacje o grach",
             dogeAPI: "Doge API - API ze zdjęciami psów",
-            contact: "Kontakt - kontakt z twórcą",
+            sign_in: "Zaloguj się - logowanie do aplikacji",
             styleChange: " - zmiana stylu",
             languageChange: "EN/PL - zmiana języka"
           },

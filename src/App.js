@@ -1,16 +1,17 @@
 import { faPalette } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useState } from 'react';
 import { ButtonGroup, Container, Nav, Navbar, NavDropdown, ToggleButton } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import useLocalStorage from 'use-local-storage';
 import './App.scss';
-import Contact from './components/Contact/Contact';
 import DogeAPI from './components/DogeAPI/DogeAPI';
 import GW2 from './components/Games/GW2/GW2';
 import AllGames from './components/Games/ĄllGames/AllGames';
 import Home from './components/Home/Home';
+import { authentication } from './services/firebase';
 
 const radios = [
   { name: 'EN', value: 'en' },
@@ -32,6 +33,23 @@ function App() {
     setTheme(newTheme);
   }
 
+  const signInWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+
+    signInWithPopup(authentication, provider)
+      .then((result) => {
+        console.log(result);
+        /*  const credential = GoogleAuthProvider.credentialFromResult(result);
+          const token = credential.accessToken;
+          const user = result.user;*/
+      }).catch((error) => {
+        /*   const errorCode = error.code;
+           const errorMessage = error.message;
+           const email = error.email;
+           const credential = GoogleAuthProvider.credentialFromError(error);*/
+      });
+  }
+
   return (
     <div className="App" data-theme={theme}>
       <div className='appContent'>
@@ -51,7 +69,7 @@ function App() {
                 </Nav>
                 <Nav>
                   <NavDropdown.Divider />
-                  <Nav.Link as={Link} to="/contact">{t('navbar.contact')}</Nav.Link>
+                  <Nav.Link onClick={signInWithGoogle}>{t('navbar.sign_in')}</Nav.Link>
                   <Nav.Link onClick={switchTheme} ><FontAwesomeIcon icon={faPalette} /></Nav.Link>
                   <ButtonGroup className="mb-2 langButtons">
                     {radios.map((radio, idx) => (
@@ -80,7 +98,6 @@ function App() {
             <Route path='/games/allGames' element={<AllGames translation={t} />} />
             <Route path='/games/gw2' element={<GW2 translation={t} />} />
             <Route path='/dogeAPI' element={<DogeAPI />} />
-            <Route path='/contact' element={<Contact translation={t} />} />
           </Routes>
         </BrowserRouter>
       </div>

@@ -29,7 +29,7 @@ const Home = (props) => {
         <h4>{t('home.title1')}</h4>
         {t('home.games')}<br />
         {t('home.dogeAPI')}<br />
-        {t('home.contact')}<br />
+        {t('home.sign_in')}<br />
         <FontAwesomeIcon icon={faPalette} />{t('home.styleChange')}<br />
         {t('home.languageChange')}<br />
       </div>
