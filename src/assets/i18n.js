@@ -17,7 +17,8 @@ i18n
           navbar: {
             games: "Games",
             allGames: "All games",
-            sign_in: "Sign in"
+            sign_in: "Sign in",
+            sign_out: "Sign out"
           },
           home: {
             title1: "About",
@@ -37,7 +38,8 @@ i18n
           navbar: {
             games: "Gry",
             allGames: "Wszystkie gry",
-            sign_in: "Zaloguj się"
+            sign_in: "Zaloguj się",
+            sign_out: "Wyloguj się"
           },
           home: {
             title1: 'O aplikacji',
