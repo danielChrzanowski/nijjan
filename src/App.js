@@ -2,7 +2,7 @@ import { faPalette } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useState } from 'react';
-import { ButtonGroup, Container, Nav, Navbar, NavDropdown, ToggleButton } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import useLocalStorage from 'use-local-storage';
@@ -14,17 +14,11 @@ import AllGames from './components/Games/ĄllGames/AllGames';
 import Home from './components/Home/Home';
 import { authentication } from './services/firebase';
 
-const radios = [
-  { name: 'EN', value: 'en' },
-  { name: 'PL', value: 'pl' }
-];
-
 function App() {
   let [user, setUser] = useState(0);
 
   const { t, i18n } = useTranslation();
   const activeLng = localStorage.getItem("i18nextLng");
-  const [radioValue, setRadioValue] = useState(activeLng);
 
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
@@ -79,23 +73,22 @@ function App() {
                   {!user ? <Nav.Link onClick={signInWithGoogle}>{t('navbar.sign_in')}</Nav.Link> : ''}
 
                   <Nav.Link onClick={switchTheme} ><FontAwesomeIcon icon={faPalette} style={{ marginLeft: '5px', marginRight: '5px' }} /></Nav.Link>
-                  <ButtonGroup className="mb-2 langButtons">
-                    {radios.map((radio, idx) => (
-                      <ToggleButton
-                        key={idx}
-                        id={`radio-${idx}`}
-                        type="radio"
-                        variant={langButtonTheme}
-                        name="radio"
-                        value={radio.value}
-                        checked={radioValue === "" ? { activeLng } : radio.value}
-                        onChange={(e) => setRadioValue(e.currentTarget.value)}
-                        onClick={() => i18n.changeLanguage(radio.value)}
-                      >
-                        {radio.name}
-                      </ToggleButton>
-                    ))}
-                  </ButtonGroup>
+                  <ToggleButtonGroup type="radio" name="options" defaultValue={activeLng} className="mb-2 langButtons" >
+                    <ToggleButton
+                      id="tbg-radio-1"
+                      variant={langButtonTheme}
+                      value={'en'}
+                      onChange={(e) => i18n.changeLanguage('en')}>
+                      EN
+                    </ToggleButton>
+                    <ToggleButton
+                      id="tbg-radio-2"
+                      variant={langButtonTheme}
+                      value={'pl'}
+                      onChange={(e) => i18n.changeLanguage('pl')}>
+                      PL
+                    </ToggleButton>
+                  </ToggleButtonGroup>
                 </Nav>
               </Navbar.Collapse>
             </Container>
