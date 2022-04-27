@@ -72,7 +72,7 @@ function App() {
                   {user ? <img src={user.photoURL} className="rounded-circle" style={{ maxHeight: '40px', maxWidth: '40px', margin: 'auto' }} alt='' /> : ''}
                   {!user ? <Nav.Link onClick={signInWithGoogle}>{t('navbar.sign_in')}</Nav.Link> : ''}
 
-                  <div onClick={switchTheme} ><FontAwesomeIcon icon={faPalette} style={{ marginLeft: '5px', marginRight: '5px' }} /></div>
+                  <Nav.Link onClick={switchTheme} ><FontAwesomeIcon icon={faPalette} style={{ marginLeft: '5px', marginRight: '5px' }} /></Nav.Link>
                   <ToggleButtonGroup type="radio" name="options" defaultValue={activeLng} className="mb-2 langButtons" >
                     <ToggleButton
                       id="tbg-radio-1"
