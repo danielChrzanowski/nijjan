@@ -18,7 +18,7 @@ function App() {
   let [user, setUser] = useState(0);
 
   const { t, i18n } = useTranslation();
-  const activeLng = localStorage.getItem("i18nextLng");
+  const activeLng = localStorage.getItem("i18nextLng") === null ? 'en' : localStorage.getItem("i18nextLng");
 
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
