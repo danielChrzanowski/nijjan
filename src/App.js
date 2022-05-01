@@ -18,7 +18,7 @@ function App() {
   let [user, setUser] = useState(0);
 
   const { t, i18n } = useTranslation();
-  const activeLng = localStorage.getItem("i18nextLng") === ('en' || '' || null || undefined) ? 'en' : 'pl';
+  const activeLng = localStorage.getItem("i18nextLng") === ('en' || undefined || null || '') ? 'en' : 'pl';
 
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
@@ -105,7 +105,7 @@ function App() {
       </div>
 
       <div className={theme === 'light' ? 'bg-light footer' : 'bg-dark footer'}>
-        Daniel Chrzanowski v0.1.4
+        Daniel Chrzanowski v0.1.5
       </div>
     </div >
   );
