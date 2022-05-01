@@ -18,9 +18,12 @@ function App() {
   let [user, setUser] = useState(0);
 
   const { t, i18n } = useTranslation();
-  console.log(localStorage.getItem("i18nextLng"));
-  const activeLng = localStorage.getItem("i18nextLng") === ('en' || 'pl') ? localStorage.getItem("i18nextLng") : 'en';
-  console.log(activeLng);
+  let activeLng = '';
+  if (localStorage.getItem("i18nextLng") === 'pl') {
+    activeLng = 'pl';
+  } else {
+    activeLng = 'en';
+  };
 
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
