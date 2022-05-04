@@ -17,7 +17,8 @@ import { authentication } from './services/firebase';
 
 function App() {
   let [user, setUser] = useState(0);
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = useState(false);
+  const [navbarExpanded, setNavbarExpanded] = useState(false);
 
   const { t, i18n } = useTranslation();
   const activeLng = localStorage.getItem("i18nextLng") === ('en' || undefined || null || '') ? 'en' : 'pl';
@@ -55,18 +56,19 @@ function App() {
     <div className="App" data-theme={theme}>
       <div className='appContent'>
         <BrowserRouter>
-          <Navbar style={{ position: 'sticky', transition: "all 0.7s" }} fixed="top" collapseOnSelect expand="lg" bg={theme} variant={theme}>
+          <Navbar expanded={navbarExpanded} style={{ position: 'sticky', transition: "all 0.7s" }}
+            fixed="top" collapseOnSelect expand="lg" bg={theme} variant={theme}>
             <Container>
-              <Navbar.Brand as={Link} to="/">Nijjan</Navbar.Brand>
-              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Brand as={Link} to="/" onClick={() => setNavbarExpanded(false)}>Nijjan</Navbar.Brand>
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={() => setNavbarExpanded(navbarExpanded ? false : "expanded")} />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
                   <NavDropdown title={t('navbar.games')} id="collasible-nav-dropdown" menuVariant={theme}>
-                    <NavDropdown.Item as={Link} to="/games/allGames">{t('navbar.allGames')}</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/games/allGames" onClick={() => setNavbarExpanded(false)}>{t('navbar.allGames')}</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item as={Link} to="/games/gw2">Guild Wars 2</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/games/gw2" onClick={() => setNavbarExpanded(false)}>Guild Wars 2</NavDropdown.Item>
                   </NavDropdown>
-                  <Nav.Link as={Link} to="/dogeAPI">Doge API</Nav.Link>
+                  <Nav.Link as={Link} to="/dogeAPI" onClick={() => setNavbarExpanded(false)}>Doge API</Nav.Link>
                 </Nav>
                 <Nav>
                   <NavDropdown.Divider />
@@ -79,7 +81,7 @@ function App() {
                         style={{ height: '20px', width: '20px' }}
                         alt='' />
                     } id="collasible-nav-dropdown" menuVariant={theme}>
-                      <NavDropdown.Item as={Link} to="/account">{user.displayName}</NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to="/account" onClick={() => setNavbarExpanded(false)}>{user.displayName}</NavDropdown.Item>
                       <NavDropdown.Divider />
                       <NavDropdown.Item onClick={() => setModalShow(true)}> {t('navbar.sign_out')}</NavDropdown.Item>
                     </NavDropdown>
@@ -119,7 +121,7 @@ function App() {
       </div>
 
       <div className={theme === 'light' ? 'bg-light footer' : 'bg-dark footer'}>
-        Daniel Chrzanowski v0.1.5
+        Daniel Chrzanowski v0.1.6
       </div>
 
       <SignOutModal
