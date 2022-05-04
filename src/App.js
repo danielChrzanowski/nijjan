@@ -1,11 +1,12 @@
 import { faPalette } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Container, Nav, Navbar, NavDropdown, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import useLocalStorage from 'use-local-storage';
+import { SignOutModal } from './addons/signOutModal/signOutModal';
 import './App.scss';
 import Account from './components/Account/Account';
 import DogeAPI from './components/DogeAPI/DogeAPI';
@@ -16,6 +17,7 @@ import { authentication } from './services/firebase';
 
 function App() {
   let [user, setUser] = useState(0);
+  const [modalShow, setModalShow] = React.useState(false);
 
   const { t, i18n } = useTranslation();
   const activeLng = localStorage.getItem("i18nextLng") === ('en' || undefined || null || '') ? 'en' : 'pl';
@@ -68,12 +70,24 @@ function App() {
                 </Nav>
                 <Nav>
                   <NavDropdown.Divider />
-                  {user ? <Nav.Link as={Link} to="/account">{user.displayName}</Nav.Link> : ''}
-                  {user ? <img src={user.photoURL} className="rounded-circle" style={{ maxHeight: '40px', maxWidth: '40px', margin: 'auto' }} alt='' /> : ''}
+
                   {!user ? <Nav.Link onClick={signInWithGoogle}>{t('navbar.sign_in')}</Nav.Link> : ''}
+                  {user ?
+                    <NavDropdown title={
+                      <img src={user.photoURL}
+                        className="rounded-circle"
+                        style={{ height: '20px', width: '20px' }}
+                        alt='' />
+                    } id="collasible-nav-dropdown" menuVariant={theme}>
+                      <NavDropdown.Item as={Link} to="/account">{user.displayName}</NavDropdown.Item>
+                      <NavDropdown.Divider />
+                      <NavDropdown.Item onClick={() => setModalShow(true)}> {t('navbar.sign_out')}</NavDropdown.Item>
+                    </NavDropdown>
+                    : ''}
 
                   <Nav.Link onClick={switchTheme} ><FontAwesomeIcon icon={faPalette} style={{ marginLeft: '5px', marginRight: '5px' }} /></Nav.Link>
-                  <ToggleButtonGroup type="radio" name="options" defaultValue={activeLng} className="mb-2 langButtons" >
+
+                  <ToggleButtonGroup type="radio" name="options" defaultValue={activeLng} className="langButtons" >
                     <ToggleButton
                       id="tbg-radio-1"
                       variant={langButtonTheme}
@@ -107,6 +121,14 @@ function App() {
       <div className={theme === 'light' ? 'bg-light footer' : 'bg-dark footer'}>
         Daniel Chrzanowski v0.1.5
       </div>
+
+      <SignOutModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        t={t}
+        user={user}
+        theme={theme}
+      />
     </div >
   );
 }

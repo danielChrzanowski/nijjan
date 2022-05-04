@@ -30,6 +30,11 @@ i18n
           },
           gw2: {
             raidNotes: 'Raid notes'
+          },
+          signOutModal: {
+            sign_out: "Sign out",
+            areYouSure: "Are you sure to sign out?",
+            closeBtn: "Close"
           }
         }
       },
@@ -51,6 +56,11 @@ i18n
           },
           gw2: {
             raidNotes: 'Notatki do rajdów'
+          },
+          signOutModal: {
+            sign_out: "Wyloguj się",
+            areYouSure: "Czy na pewno chcesz się wylogować?",
+            closeBtn: "Zamknij"
           }
         }
       }
