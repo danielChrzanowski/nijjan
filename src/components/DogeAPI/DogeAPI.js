@@ -2,9 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Button, Spinner } from 'react-bootstrap';
 import './DogeAPI.scss';
 
-const DogeAPI = () => {
-  let [res = '', setImg] = useState();
+const DogeAPI = (props) => {
+  const title = props.title;
 
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+
+  let [res = '', setImg] = useState();
   const fetchImage = async () => {
     setLoading(true);
 

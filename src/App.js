@@ -111,11 +111,11 @@ function App() {
           </Navbar>
 
           <Routes>
-            <Route exact path='/' element={<Home translation={t} />} />
-            <Route path='/games/allGames' element={<AllGames translation={t} />} />
-            <Route path='/games/gw2' element={<GW2 translation={t} />} />
-            <Route path='/dogeAPI' element={<DogeAPI />} />
-            <Route path='/account' element={<Account translation={t} user={user} />} />
+            <Route exact path='/' element={<Home translation={t} title={t('router.nijjan')} />} />
+            <Route path='/games/allGames' element={<AllGames translation={t} title={t('router.allGames')} />} />
+            <Route path='/games/gw2' element={<GW2 translation={t} title={t('router.gw2')} />} />
+            <Route path='/dogeAPI' element={<DogeAPI title={t('router.dogeAPI')} />} />
+            <Route path='/account' element={<Account translation={t} title={t('router.account')} user={user} />} />
           </Routes>
         </BrowserRouter>
       </div>

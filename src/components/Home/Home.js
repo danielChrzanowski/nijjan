@@ -1,5 +1,6 @@
 import { faPalette } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 import image1 from '../../assets/Home/gw2_1.jpg';
 import image2 from '../../assets/Home/gw2_2.jpg';
@@ -8,7 +9,12 @@ import './Home.scss';
 
 const Home = (props) => {
   const t = props.translation;
+  const title = props.title;
 
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+  
   return (
     <div>
       <div className='carousel'>

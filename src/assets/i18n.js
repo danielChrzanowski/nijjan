@@ -35,6 +35,13 @@ i18n
             sign_out: "Sign out",
             areYouSure: "Are you sure to sign out?",
             closeBtn: "Close"
+          },
+          router: {
+            nijjan: "Nijjan",
+            allGames: "Nijjan - All games",
+            gw2: "Nijjan - GW2",
+            dogeAPI: "Nijjan - Doge API",
+            account: "Nijjan - My account"
           }
         }
       },
@@ -61,6 +68,13 @@ i18n
             sign_out: "Wyloguj się",
             areYouSure: "Czy na pewno chcesz się wylogować?",
             closeBtn: "Zamknij"
+          },
+          router: {
+            nijjan: "Nijjan",
+            allGames: "Nijjan - Wszystkie gry",
+            gw2: "Nijjan - GW2",
+            dogeAPI: "Nijjan - Doge API",
+            account: "Nijjan - Moje konto"
           }
         }
       }

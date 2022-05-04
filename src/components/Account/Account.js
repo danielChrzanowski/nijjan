@@ -1,7 +1,14 @@
+import { useEffect } from 'react';
 import './Account.scss';
 
 const Account = (props) => {
   // const t = props.translation;
+  const title = props.title;
+
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+  
   const user = props.user === null ? "" : props.user;
 
   return (

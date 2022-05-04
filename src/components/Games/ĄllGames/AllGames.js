@@ -1,7 +1,13 @@
+import { useEffect } from 'react';
 import './AllGames.scss';
 
 const AllGames = (props) => {
   // const t = props.translation;
+  const title = props.title;
+
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
   return (
     <div className='content'>

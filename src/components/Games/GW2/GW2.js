@@ -1,7 +1,13 @@
+import { useEffect } from 'react';
 import './GW2.scss';
 
 const GW2 = (props) => {
   const t = props.translation;
+  const title = props.title;
+
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
   return (
     <div className='content'>
