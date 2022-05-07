@@ -27,6 +27,8 @@ function App() {
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
   const langButtonTheme = theme === 'light' ? 'primary' : 'secondary';
 
+  document.documentElement.style.setProperty('color-scheme', theme);  //scrollbar_theme
+
   const switchTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
