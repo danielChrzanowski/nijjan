@@ -130,7 +130,7 @@ function App() {
       </div>
 
       <div className={theme === 'light' ? 'bg-light footer' : 'bg-dark footer'}>
-        Daniel Chrzanowski v{process.env.REACT_APP_VERSION}
+        Daniel Chrzanowski v0.1.7
       </div>
 
       <SignOutModal
