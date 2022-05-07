@@ -4,6 +4,7 @@ import './DogeAPI.scss';
 
 const DogeAPI = (props) => {
   const title = props.title;
+  const theme = props.theme;
 
   useEffect(() => {
     document.title = title;
@@ -16,10 +17,11 @@ const DogeAPI = (props) => {
     res = await fetch('https://random.dog/woof.json')
       .then(response => response.json());
 
+    console.log();
     const imgUrl = res.url;
-    const type = imgUrl.substr(imgUrl.length - 3, imgUrl.length).toLowerCase();
+    const type = imgUrl.substr(imgUrl.length - 4, imgUrl.length).toLowerCase();
 
-    if (type !== 'jpg' && type !== 'png' && type !== 'gif') {
+    if (type !== '.jpg' && type !== 'jpeg' && type !== '.png') {
       fetchImage();
     }
 
@@ -39,10 +41,10 @@ const DogeAPI = (props) => {
     <div className='content'>
       <div style={{ display: 'flex' }}>
         <h4>Doge API</h4>
-        <Button className='refreshBtn' variant="secondary" onClick={fetchImage}>Refresh</Button>{' '}
+        <Button className='refreshBtn' variant={theme} onClick={fetchImage}>Refresh</Button>{' '}
       </div>
 
-      <div className='spinner' style={{ display: loading ? "block" : "none" }}>
+      <div className='spinner' style={{ display: loading ? "inline-block" : "none" }}>
         <Spinner animation="border" role="status">
           <span className="visually-hidden">Loading...</span>
         </Spinner>
