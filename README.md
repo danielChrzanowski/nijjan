@@ -1,2 +1,2 @@
 # Nijjan react App
-http://nijjan.herokuapp.com
+My personal web application: http://nijjan.herokuapp.com
