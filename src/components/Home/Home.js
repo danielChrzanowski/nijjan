@@ -20,19 +20,20 @@ const Home = (props) => {
       <div className='carousel'>
         <Carousel indicators={false} fade>
           <Carousel.Item>
-            <img className="d-block w-100 carouselImg" src={image1} alt="" />
+            <img className="d-block w-100 carousel-img" src={image1} alt="Guild wars 2 character" />
           </Carousel.Item>
           <Carousel.Item>
-            <img className="d-block w-100 carouselImg" src={image2} alt="" />
+            <img className="d-block w-100 carousel-img" src={image2} alt="Guild wars 2 jade bot" />
           </Carousel.Item>
           <Carousel.Item>
-            <img className="d-block w-100 carouselImg" src={image3} alt="" />
+            <img className="d-block w-100 carousel-img" src={image3} alt="Guild wars 2 character with hammer" />
           </Carousel.Item>
         </Carousel>
       </div>
 
       <div className='content'>
         <h4>{t('home.title1')}</h4>
+
         {t('home.games')}<br />
         {t('home.dogeAPI')}<br />
         {t('home.sign_in')}<br />

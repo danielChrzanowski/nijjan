@@ -4,20 +4,26 @@ import './DogeAPI.scss';
 
 const DogeAPI = (props) => {
   const title = props.title;
+  const t = props.translation;
   const theme = props.theme;
+
+  let [res = '', setImg] = useState();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     document.title = title;
   }, [title]);
 
-  let [res = '', setImg] = useState();
+  useEffect(() => {
+    fetchImage();
+  }, []); //eslint-disable-line react-hooks/exhaustive-deps
+
   const fetchImage = async () => {
     setLoading(true);
 
     res = await fetch('https://random.dog/woof.json')
       .then(response => response.json());
 
-    console.log();
     const imgUrl = res.url;
     const type = imgUrl.substr(imgUrl.length - 4, imgUrl.length).toLowerCase();
 
@@ -28,11 +34,6 @@ const DogeAPI = (props) => {
     setImg(res.url);
   };
 
-  useEffect(() => {
-    fetchImage();
-  }, []); //eslint-disable-line react-hooks/exhaustive-deps
-
-  const [loading, setLoading] = useState(true);
   const imageLoaded = () => {
     setLoading(false);
   }
@@ -41,7 +42,7 @@ const DogeAPI = (props) => {
     <div className='content'>
       <div style={{ display: 'flex' }}>
         <h4>Doge API</h4>
-        <Button className='refreshBtn' variant={theme} onClick={fetchImage}>Refresh</Button>{' '}
+        <Button className='refresh-btn' variant={theme} onClick={fetchImage}>Refresh</Button>{' '}
       </div>
 
       <div className='spinner' style={{ display: loading ? "inline-block" : "none" }}>
@@ -50,12 +51,18 @@ const DogeAPI = (props) => {
         </Spinner>
       </div>
 
+      <br />
+
+      <div className="doge-text" style={{ display: loading ? "block" : "none" }}>
+        {t('dogeAPI.highest_resolution_info')}
+      </div>
+
       <img
         style={{ display: loading ? "none" : "block" }}
-        className='dogeImg'
+        className='doge-img'
         src={res}
         onLoad={imageLoaded}
-        alt='' />
+        alt='Doge' />
     </div>
   );
 }

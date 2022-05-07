@@ -12,6 +12,7 @@ const AllGames = (props) => {
   return (
     <div className='content'>
       <h4>AllGames Component</h4>
+      
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis malesuada mi.
       Fusce laoreet nec nibh at pretium. Donec ultrices nisi eget risus aliquet viverra.
       Vivamus non magna orci. Vivamus mollis mattis venenatis.

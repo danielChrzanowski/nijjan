@@ -29,17 +29,19 @@ i18n
             languageChange: "EN/PL - language change"
           },
           gw2: {
-            raidNotes: 'Raid notes'
+            raidNotes: "Raid notes"
+          },
+          dogeAPI: {
+            highest_resolution_info: "Doges are being downloaded at the highest possible resolution so it can take a while"
           },
           signOutModal: {
             sign_out: "Sign out",
-            areYouSure: "Are you sure to sign out?",
+            areYouSure: "Are you sure you want to sign out?",
             closeBtn: "Close"
           },
           router: {
             nijjan: "Nijjan",
             allGames: "Nijjan - All games",
-            gw2: "Nijjan - GW2",
             dogeAPI: "Nijjan - Doge API",
             account: "Nijjan - My account"
           }
@@ -64,6 +66,9 @@ i18n
           gw2: {
             raidNotes: 'Notatki do rajdów'
           },
+          dogeAPI: {
+            highest_resolution_info: "Psy są pobierane w najwyższej możliwej rozdzielczości, więc może to chwilę zająć"
+          },
           signOutModal: {
             sign_out: "Wyloguj się",
             areYouSure: "Czy na pewno chcesz się wylogować?",
@@ -72,7 +77,6 @@ i18n
           router: {
             nijjan: "Nijjan",
             allGames: "Nijjan - Wszystkie gry",
-            gw2: "Nijjan - GW2",
             dogeAPI: "Nijjan - Doge API",
             account: "Nijjan - Moje konto"
           }

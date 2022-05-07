@@ -16,7 +16,7 @@ import Home from './components/Home/Home';
 import { authentication } from './services/firebase';
 
 function App() {
-  let [user, setUser] = useState(0);
+  const [user, setUser] = useState(false);
   const [modalShow, setModalShow] = useState(false);
   const [navbarExpanded, setNavbarExpanded] = useState(false);
 
@@ -25,7 +25,6 @@ function App() {
 
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
-
   const langButtonTheme = theme === 'light' ? 'primary' : 'secondary';
 
   const switchTheme = () => {
@@ -54,13 +53,15 @@ function App() {
 
   return (
     <div className="App" data-theme={theme}>
-      <div className='appContent'>
+      <div className='app-content'>
         <BrowserRouter>
           <Navbar expanded={navbarExpanded} style={{ position: 'sticky', transition: "all 0.7s" }}
             fixed="top" collapseOnSelect expand="lg" bg={theme} variant={theme}>
+
             <Container>
               <Navbar.Brand as={Link} to="/" onClick={() => setNavbarExpanded(false)}>Nijjan</Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={() => setNavbarExpanded(navbarExpanded ? false : "expanded")} />
+
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
                   <NavDropdown title={t('navbar.games')} id="collasible-nav-dropdown" menuVariant={theme}>
@@ -70,17 +71,21 @@ function App() {
                   </NavDropdown>
                   <Nav.Link as={Link} to="/dogeAPI" onClick={() => setNavbarExpanded(false)}>Doge API</Nav.Link>
                 </Nav>
+
                 <Nav>
                   <NavDropdown.Divider />
-
                   {!user ? <Nav.Link onClick={signInWithGoogle}>{t('navbar.sign_in')}</Nav.Link> : ''}
                   {user ?
-                    <NavDropdown title={
-                      <img src={user.photoURL}
-                        className="rounded-circle"
-                        style={{ height: '20px', width: '20px' }}
-                        alt='' />
-                    } id="collasible-nav-dropdown" menuVariant={theme}>
+                    <NavDropdown
+                      id="collasible-nav-dropdown"
+                      menuVariant={theme}
+                      title={
+                        <img
+                          src={user.photoURL}
+                          className="rounded-circle"
+                          style={{ height: '20px', width: '20px' }}
+                          alt='Logged user menu dropdown' />
+                      }>
                       <NavDropdown.Item as={Link} to="/account" onClick={() => setNavbarExpanded(false)}>{user.displayName}</NavDropdown.Item>
                       <NavDropdown.Divider />
                       <NavDropdown.Item onClick={() => setModalShow(true)}> {t('navbar.sign_out')}</NavDropdown.Item>
@@ -89,7 +94,7 @@ function App() {
 
                   <Nav.Link onClick={switchTheme} ><FontAwesomeIcon icon={faPalette} style={{ marginLeft: '5px', marginRight: '5px' }} /></Nav.Link>
 
-                  <ToggleButtonGroup type="radio" name="options" defaultValue={activeLng} className="langButtons" >
+                  <ToggleButtonGroup type="radio" name="options" defaultValue={activeLng} className="lang-buttons" >
                     <ToggleButton
                       id="tbg-radio-1"
                       variant={langButtonTheme}
@@ -105,23 +110,25 @@ function App() {
                       PL
                     </ToggleButton>
                   </ToggleButtonGroup>
+
                 </Nav>
               </Navbar.Collapse>
             </Container>
+
           </Navbar>
 
           <Routes>
             <Route exact path='/' element={<Home translation={t} title={t('router.nijjan')} />} />
             <Route path='/games/allGames' element={<AllGames translation={t} title={t('router.allGames')} />} />
-            <Route path='/games/gw2' element={<GW2 translation={t} title={t('router.gw2')} />} />
-            <Route path='/dogeAPI' element={<DogeAPI title={t('router.dogeAPI')} theme={theme} />} />
+            <Route path='/games/gw2' element={<GW2 translation={t} title='Nijjan - Guild Wars 2' />} />
+            <Route path='/dogeAPI' element={<DogeAPI translation={t} title={t('router.dogeAPI')} theme={theme} />} />
             <Route path='/account' element={<Account translation={t} title={t('router.account')} user={user} />} />
           </Routes>
         </BrowserRouter>
       </div>
 
       <div className={theme === 'light' ? 'bg-light footer' : 'bg-dark footer'}>
-        Daniel Chrzanowski v0.1.6
+        Daniel Chrzanowski v{process.env.REACT_APP_VERSION}
       </div>
 
       <SignOutModal
@@ -131,6 +138,7 @@ function App() {
         user={user}
         theme={theme}
       />
+
     </div >
   );
 }
