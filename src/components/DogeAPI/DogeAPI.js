@@ -42,7 +42,7 @@ const DogeAPI = (props) => {
     <div className='content'>
       <div style={{ display: 'flex' }}>
         <h4>Doge API</h4>
-        <Button className='btn-transition refresh-btn' variant={theme === 'dark' ? 'secondary' : 'primary'} onClick={fetchImage}>Refresh</Button>{' '}
+        <Button className='refresh-btn' variant={theme === 'dark' ? 'secondary' : 'primary'} onClick={fetchImage}>{t('dogeAPI.refresh')}</Button>{' '}
       </div>
 
       <div className='spinner' style={{ display: loading ? "inline-block" : "none" }}>

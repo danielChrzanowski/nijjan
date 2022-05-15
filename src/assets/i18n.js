@@ -32,6 +32,7 @@ i18n
             raidNotes: "Raid notes"
           },
           dogeAPI: {
+            refresh: "Refresh",
             highest_resolution_info: "Doges are being downloaded at the highest possible resolution so it can take a while"
           },
           signOutModal: {
@@ -67,6 +68,7 @@ i18n
             raidNotes: 'Notatki do rajdów'
           },
           dogeAPI: {
+            refresh: "Odśwież",
             highest_resolution_info: "Psy są pobierane w najwyższej możliwej rozdzielczości, więc może to chwilę zająć"
           },
           signOutModal: {
