@@ -20,10 +20,10 @@ function App() {
 
   return (
     <div className="App" data-theme={theme}>
-      <div className='app-content'>
-        <BrowserRouter>
-          <MainNavbar translation={t} i18n={i18n} user={user} setUser={setUser} theme={theme} setTheme={setTheme} />
+      <BrowserRouter>
+        <MainNavbar translation={t} i18n={i18n} user={user} setUser={setUser} theme={theme} setTheme={setTheme} />
 
+        <div className='app-content'>
           <Routes>
             <Route exact path='/' element={<Home translation={t} title={t('router.nijjan')} />} />
             <Route path='/games/allGames' element={<AllGames translation={t} title={t('router.allGames')} />} />
@@ -31,8 +31,9 @@ function App() {
             <Route path='/dogeAPI' element={<DogeAPI translation={t} title={t('router.dogeAPI')} theme={theme} />} />
             <Route path='/account' element={<Account translation={t} title={t('router.account')} user={user} />} />
           </Routes>
-        </BrowserRouter>
-      </div>
+        </div>
+      </BrowserRouter>
+
 
       <div className={theme === 'light' ? 'bg-light footer' : 'bg-dark footer'}>
         Daniel Chrzanowski v0.1.9
