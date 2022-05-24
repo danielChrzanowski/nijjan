@@ -24,7 +24,7 @@ i18n
             title1: "About",
             games: "Games - games informations",
             dogeAPI: "Doge API - Dog photos API",
-            sign_in: "Sign in - sign in to the app",
+            sign_in: "Sign in - sign in to the app using Google account",
             styleChange: " - style change",
             languageChange: "EN/PL - language change"
           },
@@ -60,7 +60,7 @@ i18n
             title1: 'O aplikacji',
             games: "Gry - informacje o grach",
             dogeAPI: "Doge API - API ze zdjęciami psów",
-            sign_in: "Zaloguj się - logowanie do aplikacji",
+            sign_in: "Zaloguj się - logowanie do aplikacji z użyciem konta Google",
             styleChange: " - zmiana stylu",
             languageChange: "EN/PL - zmiana języka"
           },
