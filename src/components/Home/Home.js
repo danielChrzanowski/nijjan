@@ -1,6 +1,6 @@
 import { css, StyleSheet } from 'aphrodite';
 import { useEffect } from 'react';
-import { fadeInDownBig, slideInDown } from 'react-animations';
+import { fadeInDownBig, zoomInDown } from 'react-animations';
 import { Carousel } from 'react-bootstrap';
 import image1 from '../../assets/Home/gw2_1.jpg';
 import image2 from '../../assets/Home/gw2_2.jpg';
@@ -17,35 +17,35 @@ const Home = (props) => {
   }, [title]);
 
   const styles = StyleSheet.create({
-    slideInDownCarousel: {
-      animationName: slideInDown,
-      animationDuration: '3.5s'
+    zoomInDownCarousel: {
+      animationName: zoomInDown,
+      animationDuration: '3s'
     },
     fadeInDownBigContent1: {
       animationName: fadeInDownBig,
-      animationDuration: '1.5s'
+      animationDuration: '1s'
     },
     fadeInDownBigContent2: {
       animationName: fadeInDownBig,
-      animationDuration: '2s'
+      animationDuration: '1.5s'
     },
     fadeInDownBigContent3: {
       animationName: fadeInDownBig,
-      animationDuration: '2.5s'
+      animationDuration: '2s'
     },
     fadeInDownBigContent4: {
       animationName: fadeInDownBig,
-      animationDuration: '3s'
+      animationDuration: '2.5s'
     },
     fadeInDownBigContent5: {
       animationName: fadeInDownBig,
-      animationDuration: '3.5s'
+      animationDuration: '3s'
     }
   })
 
   return (
     <div>
-      <div className={`carousel ${css(styles.slideInDownCarousel)}`}>
+      <div className={`carousel ${css(styles.zoomInDownCarousel)}`}>
         <Carousel indicators={false} fade>
           <Carousel.Item>
             <img className="d-block w-100 border-radius-5" src={image1} alt="Guild wars 2 character" />
