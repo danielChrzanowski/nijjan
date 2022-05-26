@@ -1,6 +1,6 @@
 import { css, StyleSheet } from 'aphrodite';
 import { useEffect } from 'react';
-import { fadeInDownBig, zoomInDown } from 'react-animations';
+import { fadeIn, fadeInDownBig } from 'react-animations';
 import { Carousel } from 'react-bootstrap';
 import image1 from '../../assets/Home/gw2_1.jpg';
 import image2 from '../../assets/Home/gw2_2.jpg';
@@ -17,8 +17,8 @@ const Home = (props) => {
   }, [title]);
 
   const styles = StyleSheet.create({
-    zoomInDownCarousel: {
-      animationName: zoomInDown,
+    fadeInCarousel: {
+      animationName: fadeIn,
       animationDuration: '3s'
     },
     fadeInDownBigContent1: {
@@ -45,7 +45,7 @@ const Home = (props) => {
 
   return (
     <div>
-      <div className={`carousel ${css(styles.zoomInDownCarousel)}`}>
+      <div className={`carousel ${css(styles.fadeInCarousel)}`}>
         <Carousel indicators={false} fade>
           <Carousel.Item>
             <img className="d-block w-100 border-radius-5" src={image1} alt="Guild wars 2 character" />
