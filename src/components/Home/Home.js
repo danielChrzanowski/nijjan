@@ -19,7 +19,7 @@ const Home = (props) => {
   const styles = StyleSheet.create({
     fadeInCarousel: {
       animationName: fadeInLeftBig,
-      animationDuration: '2s'
+      animationDuration: '2.5s'
     },
     fadeInDownBigAboutMe: {
       animationName: fadeInDownBig,
