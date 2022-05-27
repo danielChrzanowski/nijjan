@@ -11,7 +11,7 @@
 .home-grid {
     display: grid;
     max-width: 1280px;
-    margin: auto;
+    margin: auto auto 15px auto;
     gap: 10px;
 }
 
@@ -42,7 +42,7 @@
     max-width: 70%;
 }
 
-.about-me {
+.text-align-center {
     text-align: center;
 }
 

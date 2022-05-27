@@ -38,15 +38,15 @@ i18n
                 text: "My name is Daniel Chrzanowski. I am a final year student of Master of Computer Science studies at the University of Silesia."
               },
               technologies: "Technologies used in this application",
-              plannedFunctions: {
+              plannedFeatures: {
                 title: "Planned features",
                 postureCheck: "- Posture check (hourly timer with notification and sound)",
                 firebase: "- Firebase (writing to firebase)"
               },
-              functions: {
+              features: {
                 title: "Selected features",
-                signIn: "Logging in using a Google account",
-                dogeApi: "Connection with dog photos API",
+                signIn: "Signing in using a Google account",
+                dogeApi: "Connection with a dog photos API",
                 styleChange: "Dark / light style change",
                 translation: "English translation"
               }
@@ -98,12 +98,12 @@ i18n
                 text: "Nazywam się Daniel Chrzanowski. Jestem studentem ostatniego roku studiów magisterskich na Uniwersytecie Śląskim."
               },
               technologies: "Technologie wykorzystane w tej aplikacji",
-              plannedFunctions: {
+              plannedFeatures: {
                 title: "Planowane funkcje",
                 postureCheck: "- Posture check (godzinny timer z powiadomieniem i dźwiękiem)",
                 firebase: "- Firebase (zapisywanie do firebase)"
               },
-              functions: {
+              features: {
                 title: "Wybrane funkcje",
                 signIn: "Logowanie z użyciem konta Google",
                 dogeApi: "Połączeneie z API ze zdjęciami psów",

@@ -1,6 +1,6 @@
 import { css, StyleSheet } from 'aphrodite';
 import { useEffect } from 'react';
-import { fadeIn, fadeInDownBig } from 'react-animations';
+import { fadeInDownBig, fadeInLeftBig } from 'react-animations';
 import { Carousel } from 'react-bootstrap';
 import image1 from '../../assets/Home/gw2_1.jpg';
 import image2 from '../../assets/Home/gw2_2.jpg';
@@ -18,27 +18,27 @@ const Home = (props) => {
 
   const styles = StyleSheet.create({
     fadeInCarousel: {
-      animationName: fadeIn,
-      animationDuration: '3s'
+      animationName: fadeInLeftBig,
+      animationDuration: '2s'
     },
-    fadeInDownBigContent1: {
+    fadeInDownBigAboutMe: {
       animationName: fadeInDownBig,
       animationDuration: '1s'
     },
-    fadeInDownBigContent2: {
+    fadeInDownBigWhoAmI: {
       animationName: fadeInDownBig,
       animationDuration: '1.5s'
     },
-    fadeInDownBigContent3: {
+    fadeInDownBigFeatures: {
       animationName: fadeInDownBig,
       animationDuration: '2s'
     },
-    fadeInDownBigContent4: {
+    fadeInDownBigPlannedFeatures: {
       animationName: fadeInDownBig,
       animationDuration: '2.5s'
     },
-    fadeInDownBigContent5: {
-      animationName: fadeInDownBig,
+    fadeInDownBigTechnologies: {
+      animationName: fadeInLeftBig,
       animationDuration: '3s'
     }
   })
@@ -60,7 +60,7 @@ const Home = (props) => {
       </div>
 
       <div className='home-grid'>
-        <div className={`content home-grid-element home-grid-col-span-2 ${css(styles.fadeInDownBigContent1)}`}>
+        <div className={`content home-grid-element home-grid-col-span-2 ${css(styles.fadeInDownBigAboutMe)}`}>
           <h4>{t('home.grid.aboutMe.title')}</h4>
           {t('home.grid.aboutMe.text')}<br />
 
@@ -77,30 +77,30 @@ const Home = (props) => {
           <a href='https://github.com/danielChrzanowski' className='App-link'>GitHub</a><br />
         </div>
 
-        <div className={`content home-grid-element ${css(styles.fadeInDownBigContent2)}`}>
+        <div className={`content home-grid-element ${css(styles.fadeInDownBigWhoAmI)}`}>
           <h4>{t('home.grid.whoAmI.title')}</h4>
           <img src={myPhoto} className='my-photo border-radius-5' alt='Author' />
-          <div className='about-me'>
+          <div className='text-align-center'>
             {t('home.grid.whoAmI.text')}
           </div>
         </div>
 
-        <div className={`content home-grid-element ${css(styles.fadeInDownBigContent3)}`}>
-          <h4>{t('home.grid.functions.title')}</h4>
-          - {t('home.grid.functions.signIn')}<br />
-          - {t('home.grid.functions.dogeApi')}<br />
-          - {t('home.grid.functions.styleChange')}<br />
-          - {t('home.grid.functions.translation')}<br />
+        <div className={`content home-grid-element ${css(styles.fadeInDownBigFeatures)}`}>
+          <h4>{t('home.grid.features.title')}</h4>
+          - {t('home.grid.features.signIn')}<br />
+          - {t('home.grid.features.dogeApi')}<br />
+          - {t('home.grid.features.styleChange')}<br />
+          - {t('home.grid.features.translation')}<br />
         </div>
 
-        <div className={`content home-grid-element home-grid-col-span-2 ${css(styles.fadeInDownBigContent4)}`}>
-          <h4>{t('home.grid.plannedFunctions.title')}</h4>
-          {t('home.grid.plannedFunctions.postureCheck')}
+        <div className={`content home-grid-element home-grid-col-span-2 ${css(styles.fadeInDownBigPlannedFeatures)}`}>
+          <h4>{t('home.grid.plannedFeatures.title')}</h4>
+          {t('home.grid.plannedFeatures.postureCheck')}
           <div className='vertical-gap-10' />
-          {t('home.grid.plannedFunctions.firebase')}
+          {t('home.grid.plannedFeatures.firebase')}
         </div>
 
-        <div className={`content home-grid-element ${css(styles.fadeInDownBigContent5)}`}>
+        <div className={`content home-grid-element ${css(styles.fadeInDownBigTechnologies)}`}>
           <h4>{t('home.grid.technologies')}</h4>
           - React 18<br />
           - React bootstrap<br />
