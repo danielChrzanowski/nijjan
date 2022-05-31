@@ -22,8 +22,8 @@ i18n
           },
           home: {
             grid: {
-              aboutMe: {
-                title: "About me",
+              myApplications: {
+                title: "My applications",
                 text: "This is my first React application and I am currently working on it.",
                 text2: "Interesting applications that I have created so far:",
                 angular: "Restaurant (frontend: Angular - TypeScript)",
@@ -33,8 +33,8 @@ i18n
                 musicPlayer: "Music player that uses sensors (Android 11 - Java)",
                 gitHubText: "More can be found on my GitHub: "
               },
-              whoAmI: {
-                title: "Who am I?",
+              aboutMe: {
+                title: "About me",
                 text: "My name is Daniel Chrzanowski. I am a final year student of Master of Computer Science studies at the University of Silesia."
               },
               technologies: "Technologies used in this application",
@@ -82,8 +82,8 @@ i18n
           },
           home: {
             grid: {
-              aboutMe: {
-                title: "O mnie",
+              myApplications: {
+                title: "Moje aplikacje",
                 text: "Jest to moja pierwsza aplikacja napisana z użyciem Reacta nad którą aktualnie pracuję.",
                 text2: "Ciekawsze aplikacje, które do tej pory stworzyłem: ",
                 angular: "Restauracja (frontend: Angular - TypeScript)",
@@ -93,8 +93,8 @@ i18n
                 musicPlayer: "Odtwarzacz muzyki wykorzystujący sensory (Android 11 - Java)",
                 gitHubText: "Więcej można znaleźć na moim GitHubie: "
               },
-              whoAmI: {
-                title: "Kim jestem?",
+              aboutMe: {
+                title: "O mnie",
                 text: "Nazywam się Daniel Chrzanowski. Jestem studentem ostatniego roku studiów magisterskich na Uniwersytecie Śląskim."
               },
               technologies: "Technologie wykorzystane w tej aplikacji",

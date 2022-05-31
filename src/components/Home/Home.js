@@ -61,27 +61,27 @@ const Home = (props) => {
 
       <div className='home-grid'>
         <div className={`content home-grid-element home-grid-col-span-2 ${css(styles.fadeInDownBigAboutMe)}`}>
-          <h4>{t('home.grid.aboutMe.title')}</h4>
-          {t('home.grid.aboutMe.text')}<br />
+          <h4>{t('home.grid.myApplications.title')}</h4>
+          {t('home.grid.myApplications.text')}<br />
 
           <div className='vertical-gap-10' />
-          {t('home.grid.aboutMe.text2')}<br />
-          - <a href='https://github.com/danielChrzanowski/RBM' className='App-link'>{t('home.grid.aboutMe.angular')}</a><br />
-          - <a href='https://github.com/danielChrzanowski/RBM_backend' className='App-link'>{t('home.grid.aboutMe.springBoot')}</a><br />
-          - <a href='https://github.com/danielChrzanowski/DiscordBOT' className='App-link'>{t('home.grid.aboutMe.nodeJS')}</a><br />
-          - <a href='https://github.com/danielChrzanowski/Java-Game' className='App-link'>{t('home.grid.aboutMe.java')}</a><br />
-          - <a href='https://github.com/danielChrzanowski/MusicPlayer' className='App-link'>{t('home.grid.aboutMe.musicPlayer')}</a><br />
+          {t('home.grid.myApplications.text2')}<br />
+          - <a href='https://github.com/danielChrzanowski/RBM' className='App-link'>{t('home.grid.myApplications.angular')}</a><br />
+          - <a href='https://github.com/danielChrzanowski/RBM_backend' className='App-link'>{t('home.grid.myApplications.springBoot')}</a><br />
+          - <a href='https://github.com/danielChrzanowski/DiscordBOT' className='App-link'>{t('home.grid.myApplications.nodeJS')}</a><br />
+          - <a href='https://github.com/danielChrzanowski/Java-Game' className='App-link'>{t('home.grid.myApplications.java')}</a><br />
+          - <a href='https://github.com/danielChrzanowski/MusicPlayer' className='App-link'>{t('home.grid.myApplications.musicPlayer')}</a><br />
 
           <div className='vertical-gap-10' />
-          {t('home.grid.aboutMe.gitHubText')}
+          {t('home.grid.myApplications.gitHubText')}
           <a href='https://github.com/danielChrzanowski' className='App-link'>GitHub</a><br />
         </div>
 
         <div className={`content home-grid-element ${css(styles.fadeInDownBigWhoAmI)}`}>
-          <h4>{t('home.grid.whoAmI.title')}</h4>
+          <h4>{t('home.grid.aboutMe.title')}</h4>
           <img src={myPhoto} className='my-photo border-radius-5' alt='Author' />
           <div className='text-align-center'>
-            {t('home.grid.whoAmI.text')}
+            {t('home.grid.aboutMe.text')}
           </div>
         </div>
 
