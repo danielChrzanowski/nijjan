@@ -47,68 +47,65 @@ const MainNavbar = (props) => {
   }
 
   return (
-    <div>
-      <Navbar expanded={navbarExpanded} style={{ position: 'sticky', transition: "all 0.7s" }}
-        fixed="top" collapseOnSelect expand="lg" bg={theme} variant={theme}>
+    <Navbar expanded={navbarExpanded} style={{ transition: "all 0.7s" }}
+      sticky="top" collapseOnSelect expand="lg" bg={theme} variant={theme}>
 
-        <Container>
-          <Navbar.Brand as={Link} to="/" onClick={() => setNavbarExpanded(false)}>Nijjan</Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={() => setNavbarExpanded(navbarExpanded ? false : "expanded")} />
+      <Container>
+        <Navbar.Brand as={Link} to="/" onClick={() => setNavbarExpanded(false)}>Nijjan</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={() => setNavbarExpanded(navbarExpanded ? false : "expanded")} />
 
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-              <NavDropdown title={t('navbar.games')} id="collasible-nav-dropdown" menuVariant={theme}>
-                <NavDropdown.Item as={Link} to="/games/allGames" onClick={() => setNavbarExpanded(false)}>{t('navbar.allGames')}</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item as={Link} to="/games/gw2" onClick={() => setNavbarExpanded(false)}>Guild Wars 2</NavDropdown.Item>
-              </NavDropdown>
-              <Nav.Link as={Link} to="/dogeAPI" onClick={() => setNavbarExpanded(false)}>Doge API</Nav.Link>
-            </Nav>
-
-            <Nav>
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <NavDropdown title={t('navbar.games')} id="collasible-nav-dropdown" menuVariant={theme}>
+              <NavDropdown.Item as={Link} to="/games/allGames" onClick={() => setNavbarExpanded(false)}>{t('navbar.allGames')}</NavDropdown.Item>
               <NavDropdown.Divider />
-              {!user ? <Nav.Link onClick={signInWithGoogle}>{t('navbar.sign_in')}</Nav.Link> : ''}
-              {user ?
-                <NavDropdown
-                  id="collasible-nav-dropdown"
-                  menuVariant={theme}
-                  title={
-                    <img
-                      src={user.photoURL}
-                      className="rounded-circle"
-                      style={{ height: '20px', width: '20px' }}
-                      alt='Logged user menu dropdown' />
-                  }>
-                  <NavDropdown.Item as={Link} to="/account" onClick={() => setNavbarExpanded(false)}>{user.displayName}</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item onClick={() => setModalShow(true)}> {t('navbar.sign_out')}</NavDropdown.Item>
-                </NavDropdown>
-                : ''}
+              <NavDropdown.Item as={Link} to="/games/gw2" onClick={() => setNavbarExpanded(false)}>Guild Wars 2</NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link as={Link} to="/dogeAPI" onClick={() => setNavbarExpanded(false)}>Doge API</Nav.Link>
+          </Nav>
 
-              <Nav.Link onClick={switchTheme} ><FontAwesomeIcon icon={faPalette} style={{ marginLeft: '5px', marginRight: '5px' }} /></Nav.Link>
+          <Nav>
+            <NavDropdown.Divider />
+            {!user ? <Nav.Link onClick={signInWithGoogle}>{t('navbar.sign_in')}</Nav.Link> : ''}
+            {user ?
+              <NavDropdown
+                id="collasible-nav-dropdown"
+                menuVariant={theme}
+                title={
+                  <img
+                    src={user.photoURL}
+                    className="rounded-circle"
+                    style={{ height: '20px', width: '20px' }}
+                    alt='Logged user menu dropdown' />
+                }>
+                <NavDropdown.Item as={Link} to="/account" onClick={() => setNavbarExpanded(false)}>{user.displayName}</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item onClick={() => setModalShow(true)}> {t('navbar.sign_out')}</NavDropdown.Item>
+              </NavDropdown>
+              : ''}
 
-              <ToggleButtonGroup type="radio" name="options" defaultValue={activeLng} className="lang-buttons" >
-                <ToggleButton
-                  id="tbg-radio-1"
-                  variant={langButtonTheme}
-                  value={'en'}
-                  onChange={(e) => i18n.changeLanguage('en')}>
-                  EN
-                </ToggleButton>
-                <ToggleButton
-                  id="tbg-radio-2"
-                  variant={langButtonTheme}
-                  value={'pl'}
-                  onChange={(e) => i18n.changeLanguage('pl')}>
-                  PL
-                </ToggleButton>
-              </ToggleButtonGroup>
+            <Nav.Link onClick={switchTheme} ><FontAwesomeIcon icon={faPalette} style={{ marginLeft: '5px', marginRight: '5px' }} /></Nav.Link>
 
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
+            <ToggleButtonGroup type="radio" name="options" defaultValue={activeLng} className="lang-buttons" >
+              <ToggleButton
+                id="tbg-radio-1"
+                variant={langButtonTheme}
+                value={'en'}
+                onChange={(e) => i18n.changeLanguage('en')}>
+                EN
+              </ToggleButton>
+              <ToggleButton
+                id="tbg-radio-2"
+                variant={langButtonTheme}
+                value={'pl'}
+                onChange={(e) => i18n.changeLanguage('pl')}>
+                PL
+              </ToggleButton>
+            </ToggleButtonGroup>
 
-      </Navbar>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
 
       <SignOutModal
         show={modalShow}
@@ -117,7 +114,7 @@ const MainNavbar = (props) => {
         user={user}
         theme={theme}
       />
-    </div>
+    </Navbar>
   )
 }
 
