@@ -108,7 +108,7 @@ i18n
                 signIn: "Logowanie z użyciem konta Google",
                 dogeApi: "Połączeneie z API ze zdjęciami psów",
                 styleChange: "Zmiana stylu ciemny / jasny",
-                translation: "Tłuamczenie na język angielski"
+                translation: "Tłumaczenie na język angielski"
               }
             }
           },
