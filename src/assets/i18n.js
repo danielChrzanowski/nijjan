@@ -24,7 +24,7 @@ i18n
             grid: {
               myApplications: {
                 title: "My applications",
-                text: "This is my first React application and I am currently working on it.",
+                text: "This is my first React application and I am currently working on it. The source code is available at: ",
                 text2: "Interesting applications that I have created so far:",
                 angular: "Restaurant (frontend: Angular - TypeScript)",
                 springBoot: "Restaurant (backend: SpringBoot - Java)",
@@ -84,7 +84,7 @@ i18n
             grid: {
               myApplications: {
                 title: "Moje aplikacje",
-                text: "Jest to moja pierwsza aplikacja napisana z użyciem Reacta nad którą aktualnie pracuję.",
+                text: "Jest to moja pierwsza aplikacja napisana z użyciem Reacta nad którą aktualnie pracuję. Kod źródłowy dostępny jest pod adresem: ",
                 text2: "Ciekawsze aplikacje, które do tej pory stworzyłem: ",
                 angular: "Restauracja (frontend: Angular - TypeScript)",
                 springBoot: "Restauracja (backend: SpringBoot - Java)",

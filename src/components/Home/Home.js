@@ -62,7 +62,8 @@ const Home = (props) => {
       <div className='home-grid'>
         <div className={`content home-grid-element home-grid-col-span-2 ${css(styles.fadeInDownBigAboutMe)}`}>
           <h4>{t('home.grid.myApplications.title')}</h4>
-          {t('home.grid.myApplications.text')}<br />
+          {t('home.grid.myApplications.text')}
+          <a href='https://github.com/danielChrzanowski/nijjan' className='App-link'>Nijjan (React)</a><br />
 
           <div className='vertical-gap-10' />
           {t('home.grid.myApplications.text2')}<br />
