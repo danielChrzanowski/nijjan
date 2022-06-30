@@ -36,7 +36,7 @@ function App() {
 
 
       <div className={theme === 'light' ? 'bg-light footer' : 'bg-dark footer'}>
-        Daniel Chrzanowski v0.2.3
+        Daniel Chrzanowski v0.2.4
       </div>
     </div >
   );
