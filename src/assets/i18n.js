@@ -1,6 +1,6 @@
 import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import { initReactI18next } from 'react-i18next';
 
 i18n
   .use(LanguageDetector)
@@ -35,7 +35,7 @@ i18n
               },
               aboutMe: {
                 title: "About me",
-                text: "My name is Daniel Chrzanowski. I am a final year student of Master of Computer Science studies at the University of Silesia."
+                text: "My name is Daniel Chrzanowski. I am a Front-end developer."
               },
               technologies: "Technologies used in this application",
               plannedFeatures: {
@@ -95,7 +95,7 @@ i18n
               },
               aboutMe: {
                 title: "O mnie",
-                text: "Nazywam się Daniel Chrzanowski. Jestem studentem ostatniego roku studiów magisterskich na Uniwersytecie Śląskim."
+                text: "Nazywam się Daniel Chrzanowski. Jestem Front-end developerem."
               },
               technologies: "Technologie wykorzystane w tej aplikacji",
               plannedFeatures: {

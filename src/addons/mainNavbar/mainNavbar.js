@@ -2,7 +2,7 @@ import { faPalette } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useState } from 'react';
-import { Container, Nav, Navbar, NavDropdown, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import { Container, Nav, NavDropdown, Navbar, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { authentication } from '../../services/firebase';
 import { SignOutModal } from '../signOutModal/signOutModal';
@@ -62,6 +62,7 @@ const MainNavbar = (props) => {
               <NavDropdown.Item as={Link} to="/games/gw2" onClick={() => setNavbarExpanded(false)}>Guild Wars 2</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link as={Link} to="/dogeAPI" onClick={() => setNavbarExpanded(false)}>Doge API</Nav.Link>
+            <Nav.Link as={Link} to="/kinga" onClick={() => setNavbarExpanded(false)}>Kinga</Nav.Link>
           </Nav>
 
           <Nav>
