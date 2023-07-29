@@ -49,9 +49,9 @@ const Kinga = (props) => {
 }
 
 const setProgressBar = (dateFrom, dateTo, defaultProgressBarValues) => {
-  const maxDifference = Math.round((dateTo.getTime() - dateFrom.getTime()) / (1000 * 3600 * 24));
+  const maxDifference = (dateTo.getTime() - dateFrom.getTime()) / (1000 * 3600 * 24);
   const currentDate = new Date();
-  const differenceInDays = Math.round((currentDate.getTime() - dateFrom.getTime()) / (1000 * 3600 * 24));
+  const differenceInDays = (currentDate.getTime() - dateFrom.getTime()) / (1000 * 3600 * 24);
   if (differenceInDays < 0) return defaultProgressBarValues;
 
   const resultInPercent = Math.round((differenceInDays * 100) / maxDifference);
