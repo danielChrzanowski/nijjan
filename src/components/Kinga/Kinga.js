@@ -54,7 +54,7 @@ const setProgressBar = (dateFrom, dateTo, defaultProgressBarValues) => {
   const differenceInDays = (currentDate.getTime() - dateFrom.getTime()) / (1000 * 3600 * 24);
   if (differenceInDays < 0) return defaultProgressBarValues;
 
-  const resultInPercent = Math.round((differenceInDays * 100) / maxDifference);
+  const resultInPercent = Math.floor((differenceInDays * 100) / maxDifference);
   const thresholds = [20, 30];
   return [
     {
@@ -70,7 +70,7 @@ const setProgressBar = (dateFrom, dateTo, defaultProgressBarValues) => {
     {
       now: resultInPercent <= 100 ? (resultInPercent > (thresholds[0] + thresholds[1]) ? resultInPercent - (thresholds[0] + thresholds[1]) : 0) : 100 - (thresholds[0] + thresholds[1]),
       label: resultInPercent <= 100 ? (resultInPercent > (thresholds[0] + thresholds[1]) ? `${resultInPercent}%` : 0) : 100,
-      isAnimated: resultInPercent <= 100 && resultInPercent > (thresholds[0] + thresholds[1])
+      isAnimated: resultInPercent < 100 && resultInPercent > (thresholds[0] + thresholds[1])
     }
   ];
 }
