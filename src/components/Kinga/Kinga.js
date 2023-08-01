@@ -64,12 +64,12 @@ const setProgressBar = (dateFrom, dateTo, defaultProgressBarValues) => {
     },
     {
       now: resultInPercent <= (thresholds[0] + thresholds[1]) ? (resultInPercent > thresholds[0] ? resultInPercent - thresholds[0] : 0) : thresholds[1],
-      label: resultInPercent <= (thresholds[0] + thresholds[1]) ? (resultInPercent > thresholds[0] ? `${resultInPercent}%` : 0) : null,
+      label: resultInPercent <= (thresholds[0] + thresholds[1]) ? (resultInPercent > thresholds[0] ? `${resultInPercent}%` : '0%') : null,
       isAnimated: resultInPercent <= (thresholds[0] + thresholds[1]) && resultInPercent > thresholds[0]
     },
     {
       now: resultInPercent <= 100 ? (resultInPercent > (thresholds[0] + thresholds[1]) ? resultInPercent - (thresholds[0] + thresholds[1]) : 0) : 100 - (thresholds[0] + thresholds[1]),
-      label: resultInPercent <= 100 ? (resultInPercent > (thresholds[0] + thresholds[1]) ? `${resultInPercent}%` : 0) : 100,
+      label: resultInPercent <= 100 ? (resultInPercent > (thresholds[0] + thresholds[1]) ? `${resultInPercent}%` : null) : '100%',
       isAnimated: resultInPercent < 100 && resultInPercent > (thresholds[0] + thresholds[1])
     }
   ];
