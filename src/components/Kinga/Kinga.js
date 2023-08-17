@@ -20,7 +20,7 @@ const Kinga = (props) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setFirstRange(setProgressBar(new Date("2023-06-14T00:00:00.000+02:00"), new Date("2023-07-31T23:59:59.000+02:00"), defaultProgressBarValues));
-      setSecondRange(setProgressBar(new Date("2023-06-14T00:00:00.000+02:00"), new Date("2023-08-31T23:59:59.000+02:00"), defaultProgressBarValues));
+      setSecondRange(setProgressBar(new Date("2023-06-14T00:00:00.000+02:00"), new Date("2023-08-30T20:00:00.000+02:00"), defaultProgressBarValues));
     });
     return () => clearTimeout(timer);
   }, []); //eslint-disable-line react-hooks/exhaustive-deps
@@ -38,7 +38,7 @@ const Kinga = (props) => {
 
       <br />
 
-      14.06.2023 - 31.08.2023
+      14.06.2023 - 30.08.2023
       <ProgressBar>
         <ProgressBar key={1} now={secondRange[0].now} label={secondRange[0].label} variant="danger" animated={secondRange[0].isAnimated} />
         <ProgressBar key={2} now={secondRange[1].now} label={secondRange[1].label} variant="warning" animated={secondRange[1].isAnimated} />
