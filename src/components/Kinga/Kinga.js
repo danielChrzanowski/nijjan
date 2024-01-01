@@ -27,7 +27,7 @@ const Kinga = (props) => {
     <div className='content'>
       <h4>Kinga</h4>
 
-      &#10084; The happiest day of our lives &#10084; (2023-06-14 - 2025-06-14)
+      &#10084; The happiest day of our lives &#10084; (14.06.2023 - 14.06.2025)
       <ProgressBar>
         <ProgressBar key={1} now={firstRange[0].now} label={firstRange[0].label} variant="danger" animated={firstRange[0].isAnimated} />
         <ProgressBar key={2} now={firstRange[1].now} label={firstRange[1].label} variant="warning" animated={firstRange[1].isAnimated} />
