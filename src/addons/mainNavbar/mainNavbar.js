@@ -62,7 +62,7 @@ const MainNavbar = (props) => {
               <NavDropdown.Item as={Link} to="/games/gw2" onClick={() => setNavbarExpanded(false)}>Guild Wars 2</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link as={Link} to="/dogeAPI" onClick={() => setNavbarExpanded(false)}>Doge API</Nav.Link>
-            <Nav.Link as={Link} to="/kinga" onClick={() => setNavbarExpanded(false)}>Kinga</Nav.Link>
+            <Nav.Link as={Link} to="/kinia" onClick={() => setNavbarExpanded(false)}>Kinia</Nav.Link>
           </Nav>
 
           <Nav>

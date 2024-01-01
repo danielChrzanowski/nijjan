@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import './Kinga.scss';
+import './Kinia.scss';
 
-const Kinga = (props) => {
+const Kinia = (props) => {
   const title = props.title;
 
   const defaultProgressBarValues = [
@@ -25,7 +25,7 @@ const Kinga = (props) => {
 
   return (
     <div className='content'>
-      <h4>Kinga</h4>
+      <h4>Kinia</h4>
 
       &#10084; The happiest day of our lives &#10084; (14.06.2023 - 14.06.2025)
       <ProgressBar>
@@ -64,8 +64,8 @@ const setProgressBar = (dateFrom, dateTo, defaultProgressBarValues) => {
   ];
 }
 
-Kinga.propTypes = {};
+Kinia.propTypes = {};
 
-Kinga.defaultProps = {};
+Kinia.defaultProps = {};
 
-export default Kinga;
+export default Kinia;
