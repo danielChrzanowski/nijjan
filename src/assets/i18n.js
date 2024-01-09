@@ -89,6 +89,10 @@ i18n
             seconds_many: "{{count}} seconds",
             seconds_other: "{{count}} seconds",
             theHappiestDayInOurLives: "The happiest day in our lives",
+            daysLeft_one: "{{count}} day left",
+            daysLeft_few: "{{count}} days left",
+            daysLeft_many: "{{count}} days left",
+            daysLeft_other: "{{count}} days left",
           }
         }
       },
@@ -169,6 +173,10 @@ i18n
             seconds_many: "{{count}} sekund",
             seconds_other: "{{count}} sekund",
             theHappiestDayInOurLives: "Najszczęśliwszy dzień w naszym życiu",
+            daysLeft_one: "został{{count}} dzień",
+            daysLeft_few: "zostało {{count}} dni",
+            daysLeft_many: "zostało {{count}} dni",
+            daysLeft_other: "zostało {{count}} dni",
           }
         }
       }

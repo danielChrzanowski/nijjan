@@ -15,6 +15,7 @@ const Kinia = (props) => {
 
   const date1 = new Date("2023-06-14T16:00:00.000+02:00");
   const date2 = new Date("2025-06-14T00:00:00.000+02:00");
+  const happiestDayDifferenceInDays = Math.floor((date2 - date1) / (1000 * 3600 * 24));
 
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
@@ -45,16 +46,17 @@ const Kinia = (props) => {
       <h4>Kinia</h4>
       <div className="flex">
         <div>&#10084; {t('kinia.weKnowEachOtherFor')}:&nbsp;</div>
-        <div className="flex">
-          <div>{t('kinia.days', { count: days })}&nbsp;</div>
-          <div>{t('kinia.hours', { count: hours })}&nbsp;</div>
-          <div>{t('kinia.minutes', { count: minutes })}&nbsp;</div>
-          <div>{t('kinia.seconds', { count: seconds })}</div>
+        <div className="flex min-width-290px">
+          {t('kinia.days', { count: days })}&nbsp;
+          {t('kinia.hours', { count: hours })}&nbsp;
+          {t('kinia.minutes', { count: minutes })}&nbsp;
+          {t('kinia.seconds', { count: seconds })}
         </div>
       </div>
       <div className="flex">
         <div>&#10084; {t('kinia.theHappiestDayInOurLives')}&nbsp;</div>
-        <div>(14.06.2023 - 14.06.2025)</div>
+        <div>(14.06.2023 - 14.06.2025)&nbsp;</div>
+        <div>({t('kinia.daysLeft', { count: happiestDayDifferenceInDays })})</div>
       </div>
       <ProgressBar>
         <ProgressBar key={1} now={firstRange[0].now} label={firstRange[0].label} variant="danger" animated={firstRange[0].isAnimated} />
