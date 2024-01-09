@@ -46,7 +46,7 @@ const Kinia = (props) => {
       <h4>Kinia</h4>
       <div className="flex">
         <div>&#10084; {t('kinia.weKnowEachOtherFor')}:&nbsp;</div>
-        <div className="flex min-width-290px">
+        <div className="flex min-width-310px">
           {t('kinia.days', { count: days })}&nbsp;
           {t('kinia.hours', { count: hours })}&nbsp;
           {t('kinia.minutes', { count: minutes })}&nbsp;
