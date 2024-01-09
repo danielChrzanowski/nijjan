@@ -69,6 +69,26 @@ i18n
             allGames: "Nijjan - All games",
             dogeAPI: "Nijjan - Doge API",
             account: "Nijjan - My account"
+          },
+          kinia: {
+            weKnowEachOtherFor: "We know each other for",
+            days_one: "{{count}} day",
+            days_few: "{{count}} days",
+            days_many: "{{count}} days",
+            days_other: "{{count}} days",
+            hours_one: "{{count}} hour",
+            hours_few: "{{count}} hours",
+            hours_many: "{{count}} hours",
+            hours_other: "{{count}} hours",
+            minutes_one: "{{count}} minute",
+            minutes_few: "{{count}} minutes",
+            minutes_many: "{{count}} minutes",
+            minutes_other: "{{count}} minutes",
+            seconds_one: "{{count}} second",
+            seconds_few: "{{count}} seconds",
+            seconds_many: "{{count}} seconds",
+            seconds_other: "{{count}} seconds",
+            theHappiestDayInOurLives: "The happiest day in our lives",
           }
         }
       },
@@ -129,6 +149,26 @@ i18n
             allGames: "Nijjan - Wszystkie gry",
             dogeAPI: "Nijjan - Doge API",
             account: "Nijjan - Moje konto"
+          },
+          kinia: {
+            weKnowEachOtherFor: "Znamy się",
+            days_one: "{{count}} dzień",
+            days_few: "{{count}} dni",
+            days_many: "{{count}} dni",
+            days_other: "{{count}} dni",
+            hours_one: "{{count}} godzinę",
+            hours_few: "{{count}} godziny",
+            hours_many: "{{count}} godzin",
+            hours_other: "{{count}} godzin",
+            minutes_one: "{{count}} minutę",
+            minutes_few: "{{count}} minuty",
+            minutes_many: "{{count}} minut",
+            minutes_other: "{{count}} minut",
+            seconds_one: "{{count}} sekundę",
+            seconds_few: "{{count}} sekundy",
+            seconds_many: "{{count}} sekund",
+            seconds_other: "{{count}} sekund",
+            theHappiestDayInOurLives: "Najszczęśliwszy dzień w naszym życiu",
           }
         }
       }
