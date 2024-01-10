@@ -15,7 +15,7 @@ const Kinia = (props) => {
 
   const date1 = new Date("2023-06-14T16:00:00.000+02:00");
   const date2 = new Date("2025-06-14T00:00:00.000+02:00");
-  const happiestDayDifferenceInDays = Math.floor((date2 - date1) / (1000 * 3600 * 24));
+  const happiestDayDifferenceInDays = Math.ceil((date2 - new Date()) / (1000 * 3600 * 24));
 
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
