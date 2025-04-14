@@ -9,7 +9,6 @@ import DogeAPI from './components/DogeAPI/DogeAPI';
 import GW2 from './components/Games/GW2/GW2';
 import AllGames from './components/Games/ĄllGames/AllGames';
 import Home from './components/Home/Home';
-import Kinia from './components/Kinia/Kinia';
 
 function App() {
   const [user, setUser] = useState(false);
@@ -30,7 +29,6 @@ function App() {
             <Route path='/games/allGames' element={<AllGames translation={t} title={t('router.allGames')} />} />
             <Route path='/games/gw2' element={<GW2 translation={t} title='Nijjan - Guild Wars 2' />} />
             <Route path='/dogeAPI' element={<DogeAPI translation={t} title={t('router.dogeAPI')} theme={theme} />} />
-            <Route path='/kinia' element={<Kinia translation={t} title={'Kinia'} theme={theme} />} />
             <Route path='/account' element={<Account translation={t} title={t('router.account')} user={user} />} />
           </Routes>
         </div>
